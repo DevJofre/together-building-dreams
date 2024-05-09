@@ -4,6 +4,7 @@
   padding: 0.5vh 1vh;
   text-decoration: none;
   transition: 0.5s;
+  border-radius: 1vh;
 }
 
 .btn:hover {
