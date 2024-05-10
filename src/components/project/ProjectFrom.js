@@ -1,22 +1,28 @@
-import style from "./ProjectFrom.module.css";
+import Input from "../form/Input";
+import styles from "./ProjectFrom.module.css";
+import Select from "../form/Select";
+import SubmitButton from "../form/SubmitButton";
 
-function ProjectFrom() {
+function ProjectFrom({ btnText }) {
   return (
-    <form>
-      <div>
-        <input type="text" placeholder="Insira o nome do Projeto" />
-      </div>
-      <div>
-        <input type="mumber" placeholder="Insira o orçamento total" />
-      </div>
-      <div>
-        <select name="category_id">
-          <option disabled>Selecione a Catergoria</option>
-        </select>
-      </div>
-      <div>
-        <input type="submit" value="Cria Projeto" />
-      </div>
+    <form className={styles.form}>
+      <Input
+        type="text"
+        text="Nome do Projeto"
+        name="name"
+        placeholder="Insira o nome do projeto"
+      />
+
+      <Input
+        type="number"
+        text="Orçamento do Projeto"
+        name="budget"
+        placeholder="Insira o orçamento total"
+      />
+
+      <Select name="categoria_id" text="Selecione a categoria" />
+
+      <SubmitButton text={btnText} />
     </form>
   );
 }
