@@ -4,20 +4,16 @@ import Input from "../form/Input";
 import styles from "./ProjectFrom.module.css";
 import Select from "../form/Select";
 import SubmitButton from "../form/SubmitButton";
+import axios from "axios";
 
 function ProjectFrom({ btnText }) {
   const [categories, setCategories] = useState([]);
-
+  console.log(categories);
   useEffect(() => {
-    fetch("http://localhost:5000/categories", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((resp) => resp.json)
+    axios
+      .get("http://localhost:5000/categories")
       .then((data) => {
-        setCategories(data);
+        setCategories(data?.data);
       })
       .catch((err) => console.log(err));
   }, []);
