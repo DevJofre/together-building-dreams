@@ -6,9 +6,9 @@ import Select from "../form/Select";
 import SubmitButton from "../form/SubmitButton";
 import axios from "axios";
 
-function ProjectFrom({ btnText }) {
+function ProjectFrom({ handleSubmit, btnText, projetoData }) {
   const [categories, setCategories] = useState([]);
-  console.log(categories);
+  const [project, setProject] = useState(projectData || {});
   useEffect(() => {
     axios
       .get("http://localhost:5000/categories")
