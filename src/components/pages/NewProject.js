@@ -2,10 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./NewProject.module.css";
 import ProjectFrom from "../project/ProjectFrom";
-import axios from "axios";
 
 function NewProject() {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   function createPost(project) {
     project.cost = 0;
@@ -22,6 +21,7 @@ function NewProject() {
       .then((data) => {
         console.log(data);
         //redirect
+        navigate("/projects", { message: "Projeto criado com sucesso!" });
       })
       .catch((err) => console.log(err));
   }
