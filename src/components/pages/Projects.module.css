@@ -1,5 +1,6 @@
 .project_container {
   padding: 2em;
+  justify-content: none;
 }
 
 .title_container {
